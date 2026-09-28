@@ -26,7 +26,7 @@ public class Book {
         this.pageCount = pageCount;
         this.status = BookStatus.AVAILABLE;
     }
-/*  Code not Required, But still useful to learn (Getter Function)
+
     public String getTitle() {
         return title;
     }
@@ -38,7 +38,6 @@ public class Book {
     public int getPageCount() {
         return pageCount;
     }
- */
     public enum BookStatus
     {
         AVAILABLE, ON_LOAN

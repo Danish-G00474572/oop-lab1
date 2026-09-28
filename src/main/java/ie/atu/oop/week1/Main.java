@@ -3,6 +3,7 @@ package ie.atu.oop.week1;
 //28/09/26
 //Program-Java book tracker
 
+/* Code retained for Learning purpose
 public class Main
 {
     public static void main(String[] args)
@@ -19,4 +20,18 @@ public class Main
         }
     }
 
+}
+
+ */
+public class Main {
+    public static void main(String[] args) {
+        Book book = new Book("Dune", "Frank Herbert", 412);//created a book with the specified data
+        book.borrowBook();
+        try {
+            book.borrowBook();
+        } catch (IllegalStateException ex) {
+            System.out.println(ex.getMessage());
+        }
+        System.out.println(book.getStatus());
+    }
 }

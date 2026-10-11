@@ -8,21 +8,20 @@ public class Book {
 
 
     public Book(String title, String author, int pageCount) {
+        if (title == null || title.isBlank()) {
+            throw new IllegalArgumentException("Title must not be blank");
+        }
 
-        if (title == null || title.isEmpty())
-        {
-            throw new IllegalArgumentException("Title cannot be null or empty");
+        if (author == null || author.isBlank()) {
+            throw new IllegalArgumentException("Author must not be blank");
         }
-        if (author == null || author.isEmpty())
-        {
-            throw new IllegalArgumentException("Author cannot be null or empty");
+
+        if (pageCount <= 0) {
+            throw new IllegalArgumentException("Page count must be positive");
         }
-        if (pageCount < 1)
-        {
-            throw new IllegalArgumentException("Page count cannot be less than 1");
-        }
-        this.title = title;
-        this.author = author;
+
+        this.title = title.trim();
+        this.author = author.trim();
         this.pageCount = pageCount;
         this.status = BookStatus.AVAILABLE;
     }

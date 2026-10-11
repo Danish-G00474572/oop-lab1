@@ -37,10 +37,7 @@ public class Book {
     public int getPageCount() {
         return pageCount;
     }
-    public enum BookStatus
-    {
-        AVAILABLE, ON_LOAN
-    }
+
 
     public BookStatus getStatus() {
         return status;

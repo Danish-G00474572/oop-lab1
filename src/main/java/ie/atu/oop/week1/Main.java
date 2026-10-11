@@ -23,16 +23,16 @@ public class Main
  */
 public class Main {
     public static void main(String[] args) {
-        Book book = new Book("Dune", "Frank Herbert", 412);//created a book with the specified data
-        System.out.println(book.getTitle());
-        System.out.println(book.getAuthor());
-        System.out.println(book.getPageCount());
+        Book book = new Book("Dune", "Frank Herbert", 412);
         book.borrowBook();
+        book.returnBook();
+
         try {
-            book.borrowBook();
+            book.returnBook();
         } catch (IllegalStateException ex) {
             System.out.println(ex.getMessage());
         }
+
         System.out.println(book.getStatus());
     }
 }

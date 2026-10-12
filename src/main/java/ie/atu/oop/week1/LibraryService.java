@@ -6,7 +6,7 @@ public class LibraryService {
     private static final int MAX_LOAN_DAYS = 14;
     private final List<Book> books = new ArrayList<>();
 
-    public boolean loanBook(String title, int loanDays) {
+    public void loanBook(String title, int loanDays) {
         if (loanDays < 1 || loanDays > MAX_LOAN_DAYS) {
             throw new IllegalArgumentException("Loan days must be from 1 to 14");
         }
@@ -14,11 +14,10 @@ public class LibraryService {
         Book book = findBookByTitle(title);
 
         if (book == null) {
-            return false;
+            return;
         }
 
         book.borrowBook();
-        return true;
     }
 
     public boolean returnBook(String title) {
@@ -63,5 +62,8 @@ public class LibraryService {
 
         books.remove(book);
         return true;
+    }
+    public List<Book> getBooks() {
+        return new ArrayList<>(books);
     }
 }

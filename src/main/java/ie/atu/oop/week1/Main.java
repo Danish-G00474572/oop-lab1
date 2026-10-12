@@ -1,31 +1,25 @@
 package ie.atu.oop.week1;
-//Danish Fernandes
-//21/09/26
-//Program-Java book tracker
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\t\tWelcome to the Library Inventory system\n\n");//print
+        Book first = new Book("Dune", "Frank Herbert", 412);
+        Book second = new Book("Clean Code", "Robert C. Martin", 464);
+        LibraryService service = new LibraryService();
 
-        Book firstBook =createBook("Dune","Frank Hebert",412);
-        Book secondBook =createBook("Clean code","Robert c. Martin",464);
-        Book thirdBook = createBook("The C Programing language","Kernighan and Ritchie ",274);
+        System.out.println(first.getStatus());
+        service.loanBook(first, 7);
+        System.out.println(first.getStatus());
+        service.returnBook(first);
+        System.out.println(first.getStatus());
 
-        firstBook.displayDetails();
-        secondBook.displayDetails();
-        thirdBook.displayDetails();
+        System.out.println(second.getStatus());
 
-        firstBook.borrowBook();
-        firstBook.displayDetails();
-        firstBook.borrowBook();
+        try {
+            service.loanBook(first, 15);
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+        }
 
-    }
-    private static Book createBook(String title, String author, int pageCount) {
-        Book book = new Book();
-        book.title = title;
-        book.author = author;
-        book.pageCount = pageCount;
-        return book;
+        System.out.println(first.getStatus());
     }
 }

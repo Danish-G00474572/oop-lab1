@@ -35,8 +35,11 @@ public class Main {
             service.loanBook("Dune", 7);
         }
 
-        service.getAllBooks();
-
+        for (Book book : service.getBooks()) {
+            System.out.println(
+                    book.getTitle() + " - " +
+                            book.getStatus());
+        }
         try {
             store.save(service.getBooks());
             System.out.println("Saved: " + service.getBookCount());

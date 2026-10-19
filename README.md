@@ -48,10 +48,17 @@ Used ChatGPT to understand and the required version of InteleJ,JAVA and Maven to
 
 
 Briefly explain the difference between the throw statement inside Book and the catch block used by the caller.
-        
-Record what Path.of(...) does and name one Path method and one Files method used in the lab.
+   Book throws a exception when a rule is broken and then it catches any error so the program doesnot terminate / show a ugly error     
+Record what Path.of(...) does and name one Path method and one Files method used in the lab. 
+    path of creates a path without creating a file , getfilenamename gets the file name and file.exists checks if it exists
 State that Lab 5 adds exception handling and CSV persistence to the Library application.
+    State that Lab 5 adds exception handling and CSV persistence to the Library application.
 Explain the difference between unchecked NumberFormatException and checked IOException.
+    NumberFormatException does not require catch or throws but IOException requires try catch.
 Explain the difference between Path and Files.
+Path represents a file location and Files has methods to work with files at that location.
 Explain how ON_LOAN is restored without adding setStatus().
+    When the saved status is ON_LOAN the program calls borrowBook to change it to available.
+
 Record any material AI assistance used. 
+    Used chatgpt to setup intelliJ on laptop along with the right sdk version 
